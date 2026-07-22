@@ -7,6 +7,7 @@ import VoxelCraft from './VoxelCraft/VoxelCraft'
 import Game2048 from './Game2048/Game2048'
 import Minesweeper from './Minesweeper/Minesweeper'
 import Solitaire from './Solitaire/Solitaire'
+import FlappyLoaf from './FlappyLoaf/FlappyLoaf'
 import InstallWizard from './InstallWizard/InstallWizard'
 import FakeApp from './InstallWizard/FakeApp'
 import {
@@ -113,6 +114,16 @@ export const APP_REGISTRY = {
     component: Solitaire,
     defaultSize: { w: 720, h: 560 },
     minSize: { w: 560, h: 420 },
+    singleton: false,
+    showOnDesktop: false,
+    showInStart: false,
+  },
+  flappyloaf: {
+    title: 'Flappy Loaf',
+    icon: '🍞',
+    component: FlappyLoaf,
+    defaultSize: { w: 400, h: 620 },
+    minSize: { w: 400, h: 620 },
     singleton: false,
     showOnDesktop: false,
     showInStart: false,

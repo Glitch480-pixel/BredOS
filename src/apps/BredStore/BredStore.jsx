@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useStore } from '../../store/useStore'
 import { GAMES } from './games'
 import { sound } from '../../lib/sound'
+import { APP_REGISTRY } from '../registry'
 
 function BoxArt({ game, size = 'large' }) {
   const [c1, c2] = game.gradient
@@ -66,18 +67,14 @@ export default function BredStore() {
 
   const play = (g) => {
     sound.open()
+    const app = APP_REGISTRY[g.appId]
     openWindow({
       appId: g.appId,
       title: g.title,
       icon: g.glyph,
       singleton: false,
-      defaultSize:
-        g.appId === 'voxelcraft'
-          ? { w: 820, h: 560 }
-          : g.appId === 'solitaire'
-          ? { w: 720, h: 560 }
-          : { w: 420, h: 520 },
-      minSize: { w: 320, h: 300 },
+      defaultSize: app?.defaultSize ?? { w: 420, h: 520 },
+      minSize: app?.minSize ?? { w: 320, h: 300 },
     })
   }
 

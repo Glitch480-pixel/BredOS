@@ -73,7 +73,8 @@ src/
     ControlPanel/           Wallpaper / theme / volume settings.
     BredStore/              "Steam" parody game library + install flow.
     VoxelCraft/            Original three.js block sandbox.
-    Game2048/, Minesweeper/, Solitaire/   Original browser games.
+    Game2048/, Minesweeper/, Solitaire/,
+    FlappyLoaf/                          Original browser games.
     InstallWizard/          InstallShield-style fake installer wizard.
 ```
 
@@ -97,7 +98,7 @@ browser tab, so here's exactly what each piece is doing:
 | **Sound effects** | **Real**, but synthesized | Every sound (startup chime, error buzz, click, open/close, shutdown) is generated live with the Web Audio API — there are no external audio files, so nothing to license or fetch. |
 | **BredStore (Steam parody)** | **Real games, fake storefront** | The install progress bar is fake (nothing is downloaded — there's nothing to download), but every listed game (Voxel Craft, 2048, Minesweeper, Solitaire) is fully playable once "installed." "Toast Fighter Arena" is pure box-art flavor with nothing behind it. |
 | **Voxel Craft** | **Real**, original game | A from-scratch three.js sandbox: procedural terrain, first-person walk + jump, break/place blocks, four block types. It is **not** Minecraft, ships no Minecraft assets/code/textures, and isn't a clone of any copyrighted world — just an original "blocky sandbox" in the same general spirit as the genre. |
-| **2048 / Minesweeper / Solitaire** | **Real**, original implementations | Built from scratch (no cloned source), original BredOS color palettes. Solitaire is a simplified click-to-move Klondike (select a card, click a destination — no drag-and-drop and no multi-card run moves) to keep the implementation compact. |
+| **2048 / Minesweeper / Solitaire / Flappy Loaf** | **Real**, original implementations | Built from scratch (no cloned source), original BredOS art and color palettes. Solitaire is a simplified click-to-move Klondike (select a card, click a destination — no drag-and-drop and no multi-card run moves) to keep the implementation compact. Flappy Loaf is an original "tap to flap through gaps" arcade game (a generic, uncopyrightable genre) with its own art: a bread-loaf bird dodging glasses of milk. |
 | **Install Program wizard** | **Pure UI simulation** | The Next → Next → Install → Finish flow is a fully fake InstallShield-style animation. No files are written or executed anywhere. "Finish" just adds a new icon (a random joke program name) to your desktop and Start Menu, which opens a placeholder window that says exactly that. |
 | **Turn Off Computer / Restart / Log Off** | **Simulated** | These just transition between the app's boot-state screens (shutdown animation → "safe to turn off" screen, or back to the boot splash) — nothing on your actual device is touched. |
 

@@ -40,6 +40,16 @@ export const GAMES = [
     glyph: '🃏',
   },
   {
+    id: 'flappyloaf',
+    appId: 'flappyloaf',
+    title: 'Flappy Loaf',
+    tagline: 'Flap between the glasses.',
+    desc: 'An original "tap to flap" arcade game — pilot a loaf of bread between endless glasses of milk. One tap of trouble.',
+    size: '6 MB',
+    gradient: ['#ffb35c', '#c9642f'],
+    glyph: '🍞',
+  },
+  {
     id: 'toastfighter',
     comingSoon: true,
     title: 'Toast Fighter Arena',
