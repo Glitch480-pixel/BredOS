@@ -22,6 +22,15 @@ npm run preview  # preview the production build
 
 No backend, no environment variables, no API keys. It's a static site.
 
+`npm run build` produces a single self-contained `dist/index.html` (JS and
+CSS inlined via `vite-plugin-singlefile`) — you can open that file directly
+by double-clicking it (a `file://` URL), no server required. This matters
+because browsers refuse to load a normal Vite build's `<script
+type="module" src="/assets/...">` over `file://` (blocked by CORS) or from
+a non-root subpath (404s on absolute `/assets/...` paths) — both silently
+produce a blank white screen with no visible error. Inlining everything
+into one file sidesteps both problems.
+
 ## Using it
 
 - Boot screen → login screen → click an avatar to log in.
