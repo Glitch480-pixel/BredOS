@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'FrankRuhlXP';
+  src: local('Trebuchet MS');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Tahoma', 'Trebuchet MS', 'Segoe UI', Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+body {
+  background: #000;
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+::-webkit-scrollbar-track {
+  background: #d9c4a3;
+  border-left: 1px solid #8a5a2b;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #e2a35a, #b06a2a);
+  border: 1px solid #5a3418;
+}
+::-webkit-scrollbar-button {
+  background: #c97b34;
+  border: 1px solid #5a3418;
+  height: 16px;
+  width: 16px;
+}
+
+.xp-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #c97b34 #d9c4a3;
+}
+
+.text-select {
+  user-select: text;
+}
+
+@keyframes bred-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.bred-blink {
+  animation: bred-blink 1s steps(1) infinite;
+}
+
+@keyframes bred-progress-slide {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(400%); }
+}
+.bred-progress-slide {
+  animation: bred-progress-slide 1.2s ease-in-out infinite;
+}
+
+@keyframes bred-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.bred-fade-in {
+  animation: bred-fade-in 0.6s ease-in;
+}
+
+@keyframes bred-toast-glow {
+  0%, 100% { filter: drop-shadow(0 0 6px rgba(226, 113, 29, 0.4)); }
+  50% { filter: drop-shadow(0 0 16px rgba(226, 113, 29, 0.8)); }
+}
+.bred-toast-glow {
+  animation: bred-toast-glow 2.4s ease-in-out infinite;
+}
